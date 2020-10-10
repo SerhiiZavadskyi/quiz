@@ -1,0 +1,125 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(135deg, pink, blue);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+    width: 60%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.items-center{
+    align-items: center;
+    justify-content: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-start,
+.btn-skip {
+  padding: 1rem;
+  background-color: darkgray;
+  color: rebeccapurple;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+.btn-start:hover,
+.btn-skip:hover,
+.btn-answer:hover {
+  cursor: pointer;
+}
+.question {
+    margin-top: 2rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.answer-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-answer {
+  padding: 2rem 1rem;
+  background-color: rebeccapurple;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  width: 100%;
+  outline: none;
+}
+
+.btn-answer.correct {
+  border: 2px solid greenyellow;
+}
+
+.btn-answer.wrong {
+  border: 2px solid red;
+}
+
+.btn-answer:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.total-prize,
+.current-prize {
+  font-size: 1.4rem;
+}
+
+.result{
+    text-align: center;
+    padding-bottom: 8rem;
+}
+
+@media (max-width: 778px){
+  .container {
+    width: 90%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.items-center{
+  align-items: center;
+  justify-content: center;
+}
+
+.answer-buttons {
+  flex-direction: column;
+
+}
+.btn-answer{
+  margin-top: 2rem;
+}
+
+.result{
+padding-bottom: 20rem;
+}
+}

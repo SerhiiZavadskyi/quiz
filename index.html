@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HW_8</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container items-center">
+    <div class="controls">
+      <button id="btn-start" class="btn-start">Start new game</button>
+      <button id="btn-skip" class="btn-skip hide">Skip questions</button>
+    </div>
+    <div class="question-container hide">
+      <div id="question" class="question">On a radio, stations are changed by using what control?</div>
+      <div id="answer-buttons" class="answer-buttons">
+        
+      </div>
+    </div>
+    <h2 class="result hide"></h2>
+    <div class="total-container hide">
+      <p class="total-prize">Total prize: <span id="total-prize"></span></p>
+      <p class="current-prize">Prize on current round: <span id="current-prize"></span></p>
+    </div>   
+  </div>
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

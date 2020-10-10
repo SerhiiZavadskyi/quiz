@@ -1,3 +1,3 @@
 # quiz
 
-[ https://zavadskyi.github.io/quiz/index.html]
+[Demo]( https://zavadskyi.github.io/quiz/index.html)

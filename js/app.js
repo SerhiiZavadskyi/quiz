@@ -7,10 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
       answerButtons = document.getElementById('answer-buttons'),
       totalPrizeElement = document.getElementById('total-prize'),
       currentPrizeElement = document.getElementById('current-prize'),
-      result = document.querySelector('.result');
-     
+      result = document.querySelector('.result'),
+      million = 1000000,
+      double = 2,
+      half = 0.5,
+      questions = JSON.parse(localStorage.getItem('questions'));
     let shuffledQuestions, currentQuestionIndex;
-  
+
     startButton.addEventListener('click', startGame);
     skipButton.addEventListener('click', skipQuestion);
   
@@ -20,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       totalContainer.classList.remove('hide');
       document.querySelector('.container').classList.remove('items-center');
       result.classList.add('hide');
-      shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+      shuffledQuestions = questions.sort(() => Math.random() - half);
       currentQuestionIndex = 0;
       currentPrizeElement.textContent = 100;
       totalPrizeElement.textContent = 0;
@@ -34,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function setNextQeustion() {
-      if (+totalPrizeElement.textContent < 1000000) {
+      if (+totalPrizeElement.textContent < million) {
         resetState();
         showQuestion(shuffledQuestions[currentQuestionIndex]);
       } else {
@@ -61,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isCorrect) {
         totalPrizeElement.textContent =
           +totalPrizeElement.innerText + +currentPrizeElement.innerText;
-        currentPrizeElement.textContent = +currentPrizeElement.textContent * 2;
+        currentPrizeElement.textContent = +currentPrizeElement.textContent * double;
         currentQuestionIndex++;
         setNextQeustion();
       } else {
